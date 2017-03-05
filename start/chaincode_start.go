@@ -79,6 +79,8 @@ func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args 
 	return nil, errors.New("Received unknown function query: " + function)
 }
 
+//write function for invoke
+
 func (t *SimpleChaincode) write(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
     var key, value string
     var err error
@@ -97,7 +99,7 @@ func (t *SimpleChaincode) write(stub *shim.ChaincodeStub, args []string) ([]byte
     return nil, nil
 }
 
-//read function
+//read function for query
 func (t *SimpleChaincode) read(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
     var key, jsonResp string
     var err error
